@@ -1,7 +1,7 @@
 # up_counter & downc_counter
 
 ## 程式碼
-''' vhdl
+```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -50,4 +50,5 @@ end process;
 q <= Qn;
 p <= Pn;
 end rtl1;
-''' vhdl
+```vhdl
+
