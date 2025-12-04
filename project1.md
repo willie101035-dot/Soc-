@@ -52,4 +52,11 @@ p <= Pn;
 end rtl1;
 ```
 ## 波形圖
+<img width="912" height="499" alt="image" src="https://github.com/user-attachments/assets/2e44dc64-d465-4630-9213-3fbf527aa777" />
+
+## breakdown
+<img width="953" height="602" alt="image" src="https://github.com/user-attachments/assets/b19df27a-773d-42fb-a929-f7eb2ed0302d" />
+
+## msc
+<img width="840" height="742" alt="image" src="https://github.com/user-attachments/assets/79b6ae79-6e1b-4aea-9dfe-776740e5e171" />
 
