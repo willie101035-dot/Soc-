@@ -1,7 +1,7 @@
 #FSM_counter
 
 ## 程式碼
-'''vhdl
+```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -71,7 +71,7 @@ begin
     q <= std_logic_vector(to_unsigned(Qn, 4));
 
 end Behavioral;
-'''vhdl
+```
 ## 波形圖
 <img width="922" height="578" alt="image" src="https://github.com/user-attachments/assets/27c58ced-f860-4d5d-9803-c4aec2f2cd46" />
 
