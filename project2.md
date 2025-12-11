@@ -65,3 +65,8 @@ begin
 	P <= std_logic_vector(to_unsigned(Pn, P'length));
 end Behavioral;
 ```
+<img width="839" height="539" alt="Image" src="https://github.com/user-attachments/assets/730dcad1-08e2-4b48-9b2e-581f85b65be4" />
+<img width="839" height="539" alt="Image" src="https://github.com/user-attachments/assets/730dcad1-08e2-4b48-9b2e-581f85b65be4" />
+<img width="1001" height="747" alt="Image" src="https://github.com/user-attachments/assets/1528f832-efc1-4189-8c53-c2b413ad2fec" />
+<img width="1118" height="509" alt="Image" src="https://github.com/user-attachments/assets/1ee5e2fa-b420-40fb-b832-a5857d64a24d" />
+<img width="956" height="452" alt="Image" src="https://github.com/user-attachments/assets/ede971d7-1ba9-43ef-839e-7d0196a7c73f" />
