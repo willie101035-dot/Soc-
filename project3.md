@@ -25,7 +25,6 @@ architecture Behavioral of FSM_counter is
     signal Qn, Qn_d : integer := lower;
 begin
 
-    -- (1) State register (Sequential)
     process(clk, rst)
     begin
         if rst = '1' then
@@ -91,13 +90,16 @@ end Behavioral;
 <img width="922" height="578" alt="image" src="https://github.com/user-attachments/assets/27c58ced-f860-4d5d-9803-c4aec2f2cd46" />
 
 ## breakdown
-<img width="481" height="356" alt="image" src="https://github.com/user-attachments/assets/2aa178f1-8c86-48f4-8dad-0731d5038b4e" />
+<img width="1196" height="528" alt="image" src="https://github.com/user-attachments/assets/a423cfae-7fb3-456c-83a2-56a5ed3a1a85" />
+
 
 ## AOV
 <img width="1028" height="352" alt="image" src="https://github.com/user-attachments/assets/37420745-f104-409d-b6fb-fcd9f4fbc5c5" />
 
 ## 架構圖
-<img width="1324" height="551" alt="image" src="https://github.com/user-attachments/assets/a01bed57-7d57-4acc-8527-47a4f090d0da" />
+<img width="1296" height="654" alt="image" src="https://github.com/user-attachments/assets/f2857ebd-f5dd-480d-ba81-3d266ff5fdc2" />
+
 
 ## MSC
-<img width="1187" height="721" alt="image" src="https://github.com/user-attachments/assets/e26946da-819d-48d5-b8fc-e51f4061d846" />
+<img width="1210" height="349" alt="image" src="https://github.com/user-attachments/assets/5dea049a-4c9c-4ece-a6bf-733db939aec6" />
+
