@@ -94,8 +94,9 @@ end Behavioral;
 <img width="481" height="356" alt="image" src="https://github.com/user-attachments/assets/2aa178f1-8c86-48f4-8dad-0731d5038b4e" />
 
 ## AOV
-<img width="1036" height="406" alt="image" src="https://github.com/user-attachments/assets/9bfb208b-cdf6-41d4-b1b7-c99e54cbd109" />
-##架構圖
+<img width="1028" height="352" alt="image" src="https://github.com/user-attachments/assets/37420745-f104-409d-b6fb-fcd9f4fbc5c5" />
+
+## 架構圖
 <img width="1324" height="551" alt="image" src="https://github.com/user-attachments/assets/a01bed57-7d57-4acc-8527-47a4f090d0da" />
-##MSC
+## MSC
 <img width="1187" height="721" alt="image" src="https://github.com/user-attachments/assets/e26946da-819d-48d5-b8fc-e51f4061d846" />
