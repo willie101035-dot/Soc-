@@ -98,5 +98,6 @@ end Behavioral;
 
 ## 架構圖
 <img width="1324" height="551" alt="image" src="https://github.com/user-attachments/assets/a01bed57-7d57-4acc-8527-47a4f090d0da" />
+
 ## MSC
 <img width="1187" height="721" alt="image" src="https://github.com/user-attachments/assets/e26946da-819d-48d5-b8fc-e51f4061d846" />
