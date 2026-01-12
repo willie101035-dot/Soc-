@@ -129,3 +129,8 @@ set_property PACKAGE_PIN U14 [get_ports {P[3]}]
 
 ## AOV
 <img width="956" height="452" alt="Image" src="https://github.com/user-attachments/assets/ede971d7-1ba9-43ef-839e-7d0196a7c73f" />
+
+## FPGA板
+https://github.com/user-attachments/assets/90c631e7-57b1-4936-87ac-fff8076ee553
+
+
