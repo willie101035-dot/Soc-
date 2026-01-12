@@ -88,48 +88,32 @@ end Behavioral;
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 #XDC
 
-set_property PACKAGE_PIN Y9 [get_ports clk]
+set_property PACKAGE_PIN Y9 [get_ports clk]  
     set_property IOSTANDARD LVCMOS25 [get_ports clk]
 
-set_property PACKAGE_PIN F22 [get_ports rst]
+set_property PACKAGE_PIN F22 [get_ports rst]  
     set_property IOSTANDARD LVCMOS25 [get_ports rst]
 
-set_property PACKAGE_PIN G22 [get_ports dir]
+set_property PACKAGE_PIN G22 [get_ports dir]  
+    set_property IOSTANDARD LVCMOS25 [get_ports dir]  
 
-    set_property IOSTANDARD LVCMOS25 [get_ports dir]
+set_property PACKAGE_PIN T22 [get_ports {Q[0]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {Q[0]}]  
+set_property PACKAGE_PIN T21 [get_ports {Q[1]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {Q[1]}]  
+set_property PACKAGE_PIN U22 [get_ports {Q[2]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {Q[2]}]  
+set_property PACKAGE_PIN U21 [get_ports {Q[3]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {Q[3]}]  
 
-set_property PACKAGE_PIN T22 [get_ports {Q[0]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {Q[0]}]
-	
-set_property PACKAGE_PIN T21 [get_ports {Q[1]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {Q[1]}]
-	
-set_property PACKAGE_PIN U22 [get_ports {Q[2]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {Q[2]}]
-	
-set_property PACKAGE_PIN U21 [get_ports {Q[3]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {Q[3]}]
-	
-
-set_property PACKAGE_PIN V22 [get_ports {P[0]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {P[0]}]
-	
-set_property PACKAGE_PIN W22 [get_ports {P[1]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {P[1]}]
-	
-set_property PACKAGE_PIN U19 [get_ports {P[2]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {P[2]}]
-	
-set_property PACKAGE_PIN U14 [get_ports {P[3]}]
-
-    set_property IOSTANDARD LVCMOS25 [get_ports {P[3]}]
+set_property PACKAGE_PIN V22 [get_ports {P[0]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {P[0]}]  
+set_property PACKAGE_PIN W22 [get_ports {P[1]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {P[1]}]  
+set_property PACKAGE_PIN U19 [get_ports {P[2]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {P[2]}]  
+set_property PACKAGE_PIN U14 [get_ports {P[3]}]  
+    set_property IOSTANDARD LVCMOS25 [get_ports {P[3]}]  
 
 <img width="1537" height="698" alt="Image" src="https://github.com/user-attachments/assets/5defec92-80a9-40d0-adb2-c8ace8778111" />
 <img width="839" height="539" alt="Image" src="https://github.com/user-attachments/assets/730dcad1-08e2-4b48-9b2e-581f85b65be4" />
