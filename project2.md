@@ -86,8 +86,8 @@ begin
 end Behavioral;
 ```
 ______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-XDC
-'''vhdl
+#XDC
+
 set_property PACKAGE_PIN Y9 [get_ports clk]
     set_property IOSTANDARD LVCMOS25 [get_ports clk]
 
@@ -121,7 +121,7 @@ set_property PACKAGE_PIN U19 [get_ports {P[2]}]
 	
 set_property PACKAGE_PIN U14 [get_ports {P[3]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {P[3]}]
-'''
+
 <img width="1537" height="698" alt="Image" src="https://github.com/user-attachments/assets/5defec92-80a9-40d0-adb2-c8ace8778111" />
 <img width="839" height="539" alt="Image" src="https://github.com/user-attachments/assets/730dcad1-08e2-4b48-9b2e-581f85b65be4" />
 <img width="1001" height="747" alt="Image" src="https://github.com/user-attachments/assets/1528f832-efc1-4189-8c53-c2b413ad2fec" />
