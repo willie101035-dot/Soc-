@@ -99,19 +99,26 @@ set_property PACKAGE_PIN G22 [get_ports dir]
 
 set_property PACKAGE_PIN T22 [get_ports {Q[0]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {Q[0]}]
+	
 set_property PACKAGE_PIN T21 [get_ports {Q[1]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {Q[1]}]
+	
 set_property PACKAGE_PIN U22 [get_ports {Q[2]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {Q[2]}]
+	
 set_property PACKAGE_PIN U21 [get_ports {Q[3]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {Q[3]}]
+	
 
 set_property PACKAGE_PIN V22 [get_ports {P[0]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {P[0]}]
+	
 set_property PACKAGE_PIN W22 [get_ports {P[1]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {P[1]}]
+	
 set_property PACKAGE_PIN U19 [get_ports {P[2]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {P[2]}]
+	
 set_property PACKAGE_PIN U14 [get_ports {P[3]}]
     set_property IOSTANDARD LVCMOS25 [get_ports {P[3]}]
 '''
