@@ -115,17 +115,17 @@ set_property PACKAGE_PIN U19 [get_ports {P[2]}]
 set_property PACKAGE_PIN U14 [get_ports {P[3]}]  
     set_property IOSTANDARD LVCMOS25 [get_ports {P[3]}]  
 
-##波形圖
+## 波形圖
 <img width="1537" height="698" alt="Image" src="https://github.com/user-attachments/assets/5defec92-80a9-40d0-adb2-c8ace8778111" />
 
-##
+## 架構圖
 <img width="839" height="539" alt="Image" src="https://github.com/user-attachments/assets/730dcad1-08e2-4b48-9b2e-581f85b65be4" />
 
-##
+## MSC
 <img width="1001" height="747" alt="Image" src="https://github.com/user-attachments/assets/1528f832-efc1-4189-8c53-c2b413ad2fec" />
 
-##
+## break down
 <img width="1118" height="509" alt="Image" src="https://github.com/user-attachments/assets/1ee5e2fa-b420-40fb-b832-a5857d64a24d" />
 
-##AOV
+## AOV
 <img width="956" height="452" alt="Image" src="https://github.com/user-attachments/assets/ede971d7-1ba9-43ef-839e-7d0196a7c73f" />
