@@ -60,3 +60,7 @@ end rtl1;
 ## msc
 <img width="840" height="742" alt="image" src="https://github.com/user-attachments/assets/79b6ae79-6e1b-4aea-9dfe-776740e5e171" />
 
+## FPGA板
+https://github.com/user-attachments/assets/c2c6a928-ef4d-4e71-916f-822c4e488533
+
+
