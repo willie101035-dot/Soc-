@@ -125,10 +125,10 @@ set_property PACKAGE_PIN U14 [get_ports {P[3]}]
 <img width="1001" height="747" alt="Image" src="https://github.com/user-attachments/assets/1528f832-efc1-4189-8c53-c2b413ad2fec" />
 
 ## break down
-<img width="650" height="387" alt="image" src="https://github.com/user-attachments/assets/06f5e333-b587-464f-ad82-d0db1782ffd4" />
+<img width="490" height="326" alt="image" src="https://github.com/user-attachments/assets/eddca6c9-5c21-4419-b792-bc9d28d2d67f" />
 
 ## AOV
-<img width="669" height="398" alt="image" src="https://github.com/user-attachments/assets/dfa38dbd-66e6-4a68-ac36-cb751ad76fcd" />
+<img width="609" height="375" alt="image" src="https://github.com/user-attachments/assets/f39f70e0-9ac4-44e8-90cc-33047f362076" />
 
 ## FPGA板
 https://github.com/user-attachments/assets/90c631e7-57b1-4936-87ac-fff8076ee553
