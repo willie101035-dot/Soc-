@@ -125,7 +125,7 @@ set_property PACKAGE_PIN U14 [get_ports {P[3]}]
 <img width="1001" height="747" alt="Image" src="https://github.com/user-attachments/assets/1528f832-efc1-4189-8c53-c2b413ad2fec" />
 
 ## break down
-<img width="1118" height="509" alt="Image" src="https://github.com/user-attachments/assets/1ee5e2fa-b420-40fb-b832-a5857d64a24d" />
+<img width="494" height="328" alt="image" src="https://github.com/user-attachments/assets/e962b902-273a-4724-8faa-98086be62dd9" />
 
 ## AOV
 <img width="956" height="452" alt="Image" src="https://github.com/user-attachments/assets/ede971d7-1ba9-43ef-839e-7d0196a7c73f" />
