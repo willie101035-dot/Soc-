@@ -1,5 +1,5 @@
 ## PWM
-''' vhdl
+```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -88,4 +88,4 @@ begin
                std_logic_vector(score_l) & std_logic_vector(score_r);
 
 end Behavioral;
-'''
+```
