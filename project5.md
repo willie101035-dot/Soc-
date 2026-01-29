@@ -1,4 +1,5 @@
 # PWM
+## 程式碼
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -89,4 +90,9 @@ begin
 
 end Behavioral;
 ```
+## 波形圖
+
+## 架構圖
+
+## break down
 
