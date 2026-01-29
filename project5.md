@@ -1,4 +1,4 @@
-# PWM
+# BALL
 ## 程式碼
 ```vhdl
 library IEEE;
