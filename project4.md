@@ -125,6 +125,7 @@ begin
 end Behavioral;
 ```
 ## 波形圖
+<img width="1123" height="585" alt="image" src="https://github.com/user-attachments/assets/a5eb9c68-bd89-45a1-b927-180653eb857f" />
 
 ## 架構圖
 
@@ -136,4 +137,7 @@ end Behavioral;
 ## fsm
 
 ## MSC
+
+## FPGA板
+https://github.com/user-attachments/assets/530f3045-3329-49c6-b4da-db16687d8456
 
