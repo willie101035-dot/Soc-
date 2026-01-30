@@ -133,10 +133,13 @@ end Behavioral;
 <img width="881" height="299" alt="image" src="https://github.com/user-attachments/assets/b248f968-8afd-4454-a75e-4343f8912879" />
 
 ## AOV
+<img width="832" height="459" alt="image" src="https://github.com/user-attachments/assets/cfffecc6-baea-4298-9726-0b662e49483a" />
 
-## fsm
+## FSM
+<img width="626" height="356" alt="image" src="https://github.com/user-attachments/assets/7da89022-07ef-4480-b1cf-dd35d9a17bf3" />
 
 ## MSC
+<img width="1266" height="372" alt="image" src="https://github.com/user-attachments/assets/ffafc406-49dc-4a19-be3c-eea1f6f58f7e" />
 
 ## FPGA板
 https://github.com/user-attachments/assets/530f3045-3329-49c6-b4da-db16687d8456
