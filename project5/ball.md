@@ -177,15 +177,18 @@ begin
 end Behavioral;
 ```
 ## 波形圖
-<img width="943" height="594" alt="image" src="https://github.com/user-attachments/assets/fbd79e27-f779-4ef1-9308-4d831545b349" />
+<img width="938" height="617" alt="image" src="https://github.com/user-attachments/assets/c12dc11e-bf50-4ede-8627-aec348b0b97e" />
 
 ## 架構圖
 
 ## break down
+<img width="1077" height="276" alt="image" src="https://github.com/user-attachments/assets/8a10929f-516f-440f-ac25-5443e35d7827" />
 
 ## AOV
+<img width="978" height="389" alt="image" src="https://github.com/user-attachments/assets/e484e99a-1dff-4493-b335-8d8cb75be5e2" />
 
 ## fsm
+<img width="1080" height="671" alt="image" src="https://github.com/user-attachments/assets/74814f7a-fafa-4ebb-acad-9bc92e3e4a6e" />
 
 ## MSC
 
