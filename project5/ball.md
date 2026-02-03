@@ -192,6 +192,7 @@ end Behavioral;
 <img width="1080" height="671" alt="image" src="https://github.com/user-attachments/assets/74814f7a-fafa-4ebb-acad-9bc92e3e4a6e" />
 
 ## MSC
+<img width="756" height="601" alt="image" src="https://github.com/user-attachments/assets/d11b78f0-f1e8-43bf-9635-c8a54bcf88c6" />
 
 ## FPGA板
 https://github.com/user-attachments/assets/28c1f027-e03b-4392-b515-b896a25c505d
