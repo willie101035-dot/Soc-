@@ -87,11 +87,10 @@ end Behavioral;
 
 ```
 ## 波形圖
-<img width="922" height="578" alt="image" src="https://github.com/user-attachments/assets/27c58ced-f860-4d5d-9803-c4aec2f2cd46" />
+<img width="840" height="506" alt="image" src="https://github.com/user-attachments/assets/18026499-3831-4989-9a34-c76fbebe3d3a" />
 
 ## breakdown
 <img width="1196" height="528" alt="image" src="https://github.com/user-attachments/assets/a423cfae-7fb3-456c-83a2-56a5ed3a1a85" />
-
 
 ## AOV
 <img width="1028" height="352" alt="image" src="https://github.com/user-attachments/assets/37420745-f104-409d-b6fb-fcd9f4fbc5c5" />
