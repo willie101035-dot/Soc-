@@ -157,5 +157,7 @@ end Behavioral;
 <img width="1266" height="372" alt="image" src="https://github.com/user-attachments/assets/ffafc406-49dc-4a19-be3c-eea1f6f58f7e" />
 
 ## FPGA板
-https://github.com/user-attachments/assets/530f3045-3329-49c6-b4da-db16687d8456
+https://github.com/user-attachments/assets/4252a5e2-fb82-4c43-b9d9-31827bc85ec6
+
+
 
