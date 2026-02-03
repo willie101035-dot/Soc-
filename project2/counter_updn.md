@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity updncounter_v2 is
 	generic(
-		upper : integer := 13; 
+		upper : integer := 9; 
 		lower : integer := 0
 	);
 	port(
@@ -119,10 +119,10 @@ set_property PACKAGE_PIN U14 [get_ports {P[3]}]
 <img width="1537" height="698" alt="Image" src="https://github.com/user-attachments/assets/5defec92-80a9-40d0-adb2-c8ace8778111" />
 
 ## 架構圖
-<img width="839" height="539" alt="Image" src="https://github.com/user-attachments/assets/730dcad1-08e2-4b48-9b2e-581f85b65be4" />
+<img width="793" height="306" alt="image" src="https://github.com/user-attachments/assets/4e3b3145-24b7-4d77-970d-22a56617115f" />
 
 ## MSC
-<img width="1001" height="747" alt="Image" src="https://github.com/user-attachments/assets/1528f832-efc1-4189-8c53-c2b413ad2fec" />
+<img width="1040" height="353" alt="image" src="https://github.com/user-attachments/assets/6a8f4b08-736d-4a1a-84f5-f7f1b9b8da2d" />
 
 ## break down
 <img width="490" height="326" alt="image" src="https://github.com/user-attachments/assets/eddca6c9-5c21-4419-b792-bc9d28d2d67f" />
