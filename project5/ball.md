@@ -193,6 +193,8 @@ end Behavioral;
 ## MSC
 
 ## FPGA板
-https://github.com/user-attachments/assets/ebab268a-d3c9-434f-9f9e-4f1154bac0dd
+https://github.com/user-attachments/assets/28c1f027-e03b-4392-b515-b896a25c505d
+
+
 
 
