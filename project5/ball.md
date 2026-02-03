@@ -16,7 +16,7 @@ entity pingpong_top is
 end pingpong_top;
 
 architecture Behavioral of pingpong_top is
-    constant DIV_CNT     : integer := 10;
+    constant DIV_CNT     : integer := 10000000;;
     signal div_counter   : integer range 0 to DIV_CNT - 1 := 0;
     signal slow_clk      : std_logic := '0';
     signal ball_reg      : std_logic_vector(7 downto 0) := "10000000";
