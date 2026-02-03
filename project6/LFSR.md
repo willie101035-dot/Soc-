@@ -1,6 +1,7 @@
 # LFSR
 ## 程式碼
 ```vhdl
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
@@ -16,9 +17,10 @@ entity pingpong_top is
 end pingpong_top;
 
 architecture Behavioral of pingpong_top is
+    constant DIV_CNT     : integer := 10000000;
+    signal div_counter   : integer range 0 to DIV_CNT + 15 := 0;
+    signal speed_limit   : integer range 0 to 15 := 0;
     signal lfsr_reg      : std_logic_vector(3 downto 0) := "1011";
-    signal speed_limit   : integer range 5 to 15 := 10;
-    signal div_counter   : integer range 0 to 15 := 0;
     signal slow_clk      : std_logic := '0';
     signal ball_reg      : std_logic_vector(7 downto 0) := "10000000";
     signal dir           : std_logic := '0';
@@ -41,9 +43,13 @@ begin
     process(clk, rst)
     begin
         if rst = '1' then
-            speed_limit <= 10;
+            speed_limit <= 0;
         elsif rising_edge(clk) then
-            speed_limit <= to_integer(unsigned(lfsr_reg)) + 5;
+            if (ball_reg = "00000010" and btn_r = '1') or 
+               (ball_reg = "01000000" and btn_l = '1') or
+               (current_state = SHOW_SCORE and delay_cnt = 10) then
+                speed_limit <= to_integer(unsigned(lfsr_reg));
+            end if;
         end if;
     end process;
 
@@ -52,7 +58,7 @@ begin
         if rst = '1' then
             div_counter <= 0;
         elsif rising_edge(clk) then
-            if div_counter >= speed_limit then
+            if div_counter >= (DIV_CNT + (speed_limit * 100000)) then
                 div_counter <= 0;
             else
                 div_counter <= div_counter + 1;
@@ -65,7 +71,7 @@ begin
         if rst = '1' then
             slow_clk <= '0';
         elsif rising_edge(clk) then
-            if div_counter >= speed_limit then
+            if div_counter >= (DIV_CNT + (speed_limit * 100000)) then
                 slow_clk <= not slow_clk;
             end if;
         end if;
