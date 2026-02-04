@@ -204,12 +204,14 @@ end Behavioral;
 <img width="1667" height="843" alt="image" src="https://github.com/user-attachments/assets/8487194d-6d23-4cb2-8b4c-d162862dfce0" />
 
 ## 架構圖
+<img width="935" height="453" alt="image" src="https://github.com/user-attachments/assets/a53b25a9-6b5d-478c-8a8c-d0613458411d" />
 
 ## break down
 <img width="1862" height="352" alt="image" src="https://github.com/user-attachments/assets/6150d2b8-b9ea-404b-82ee-228a41d47fd8" />
 
 ## AOV
-
+<img width="1012" height="163" alt="image" src="https://github.com/user-attachments/assets/bbf6824a-b685-40ef-ba40-6bbcd5a596d6" />
+    
 ## fsm
 <img width="819" height="427" alt="image" src="https://github.com/user-attachments/assets/7e63a01d-e490-44bc-8fc1-5dc2b5b669e6" />
 
