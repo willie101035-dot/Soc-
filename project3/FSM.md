@@ -103,6 +103,6 @@ end Behavioral;
 
 ## FSM
 
-![image](https://github.com/user-attachments/assets/889882ea-75bf-4225-8ea3-529d2467aabf)
+https://github.com/user-attachments/assets/889882ea-75bf-4225-8ea3-529d2467aabf
 
 
