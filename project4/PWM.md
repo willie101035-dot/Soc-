@@ -148,10 +148,10 @@ end Behavioral;
 <img width="1151" height="327" alt="image" src="https://github.com/user-attachments/assets/7060020d-855d-4e17-b667-287375b391d5" />
 
 ## AOV
-<img width="832" height="459" alt="image" src="https://github.com/user-attachments/assets/cfffecc6-baea-4298-9726-0b662e49483a" />
+<img width="1272" height="331" alt="image" src="https://github.com/user-attachments/assets/53626493-0fdc-4fb5-b59a-73f9dd5f603b" />
 
 ## FSM
-<img width="626" height="356" alt="image" src="https://github.com/user-attachments/assets/7da89022-07ef-4480-b1cf-dd35d9a17bf3" />
+<img width="461" height="499" alt="image" src="https://github.com/user-attachments/assets/ebc72dc5-99c7-4167-bc7d-0c7b054ea301" />
 
 ## MSC
 <img width="1266" height="372" alt="image" src="https://github.com/user-attachments/assets/ffafc406-49dc-4a19-be3c-eea1f6f58f7e" />
