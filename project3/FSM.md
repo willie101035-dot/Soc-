@@ -102,7 +102,8 @@ end Behavioral;
 <img width="1103" height="316" alt="image" src="https://github.com/user-attachments/assets/894c5731-59ed-4dab-82f2-9e9d5b89519a" />
 
 ## FSM
+<img width="1400" height="801" alt="image" src="https://github.com/user-attachments/assets/db13b9c6-2f04-4c11-adc8-4e6e2289b087" />
 
-https://github.com/user-attachments/assets/889882ea-75bf-4225-8ea3-529d2467aabf
-
+## fpga板
+https://github.com/user-attachments/assets/785d42d4-4750-48c5-975f-4dc707541a71
 
