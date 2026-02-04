@@ -211,6 +211,7 @@ end Behavioral;
 ## AOV
 
 ## fsm
+<img width="819" height="427" alt="image" src="https://github.com/user-attachments/assets/7e63a01d-e490-44bc-8fc1-5dc2b5b669e6" />
 
 ## MSC
 
