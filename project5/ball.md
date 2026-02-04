@@ -181,16 +181,17 @@ end Behavioral;
 <img width="1077" height="276" alt="image" src="https://github.com/user-attachments/assets/8a10929f-516f-440f-ac25-5443e35d7827" />
 
 ## AOV
-<img width="978" height="389" alt="image" src="https://github.com/user-attachments/assets/e484e99a-1dff-4493-b335-8d8cb75be5e2" />
+<img width="1012" height="163" alt="image" src="https://github.com/user-attachments/assets/bbf6824a-b685-40ef-ba40-6bbcd5a596d6" />
 
 ## fsm
 <img width="819" height="427" alt="image" src="https://github.com/user-attachments/assets/7e63a01d-e490-44bc-8fc1-5dc2b5b669e6" />
 
 ## MSC
-<img width="756" height="601" alt="image" src="https://github.com/user-attachments/assets/d11b78f0-f1e8-43bf-9635-c8a54bcf88c6" />
+<img width="1111" height="238" alt="image" src="https://github.com/user-attachments/assets/f162541f-6974-4b17-8dbb-6d0d4bd4cbfb" />
+
 
 ## FPGA板
-https://github.com/user-attachments/assets/28c1f027-e03b-4392-b515-b896a25c505d
+https://github.com/user-attachments/assets/b4efa272-41de-47b1-87de-d062a1bd59b8
 
 
 
