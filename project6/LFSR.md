@@ -27,13 +27,13 @@ architecture Behavioral of pingpong_top is
     signal score_l       : unsigned(3 downto 0) := "0000";
     signal score_r       : unsigned(3 downto 0) := "0000";
     
-    -- 新增 WAIT_SERVE 狀態
+
     type state_type is (WAIT_SERVE, PLAYING, SHOW_SCORE);
     signal current_state : state_type := WAIT_SERVE;
     signal delay_cnt     : integer range 0 to 10 := 0;
 begin
 
-    -- 1. LFSR 隨機數
+
     process(clk, rst)
     begin
         if rst = '1' then
@@ -43,7 +43,7 @@ begin
         end if;
     end process;
 
-    -- 2. 隨機速度界限 (球被擊中或得分後更新)
+
     process(clk, rst)
     begin
         if rst = '1' then
@@ -57,13 +57,13 @@ begin
         end if;
     end process;
 
-    -- 3. 分頻計數器
+
     process(clk, rst)
     begin
         if rst = '1' then
             div_counter <= 0;
         elsif rising_edge(clk) then
-            -- 這裡乘上 100000 讓隨機感明顯
+
             if div_counter >= (DIV_CNT + (speed_limit * 100000)) then
                 div_counter <= 0;
             else
@@ -72,7 +72,7 @@ begin
         end if;
     end process;
 
-    -- 4. 慢速時鐘
+
     process(clk, rst)
     begin
         if rst = '1' then
@@ -84,7 +84,7 @@ begin
         end if;
     end process;
 
-    -- 5. 狀態機 (加入 WAIT_SERVE)
+
     process(slow_clk, rst)
     begin
         if rst = '1' then
@@ -108,7 +108,7 @@ begin
         end if;
     end process;
 
-    -- 6. 球的位置 (PLAYING 時才移動)
+
     process(slow_clk, rst)
     begin
         if rst = '1' then
@@ -129,7 +129,7 @@ begin
         end if;
     end process;
 
-    -- 7. 移動方向
+
     process(slow_clk, rst)
     begin
         if rst = '1' then
@@ -145,7 +145,7 @@ begin
         end if;
     end process;
 
-    -- 8. 左得分
+
     process(slow_clk, rst)
     begin
         if rst = '1' then
@@ -157,7 +157,7 @@ begin
         end if;
     end process;
 
-    -- 9. 右得分
+
     process(slow_clk, rst)
     begin
         if rst = '1' then
@@ -169,7 +169,7 @@ begin
         end if;
     end process;
 
-    -- 10. 延遲計數
+
     process(slow_clk, rst)
     begin
         if rst = '1' then
@@ -183,7 +183,7 @@ begin
         end if;
     end process;
 
-    -- 11. LED 輸出
+
     process(clk, rst)
     begin
         if rst = '1' then
