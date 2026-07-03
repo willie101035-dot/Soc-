@@ -111,7 +111,7 @@ begin
         end if;
     end if;
 end process;
-    --dir
+    --dir(0:r,1:l)
     process(clk, rst)
     begin
         if rst = '1' then
@@ -138,7 +138,6 @@ end process;
         elsif rising_edge(clk) then
             if slow_clk = '1' then
                 if current_state = PLAYING then
-                    -- 右邊漏球，或者右邊提早擊球，左邊都得 1 分
                     if (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1 downto 0) = "00" and btn_r = '1') then
                         score_l <= score_l + 1;
                     end if;
