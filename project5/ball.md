@@ -16,7 +16,8 @@ entity pingpong_top is
 end pingpong_top;
 
 architecture Behavioral of pingpong_top is
-    constant DIV_CNT     : integer := 10000000;
+    constant DIV_CNT     : integer := 4; 
+    
     signal div_counter   : integer range 0 to DIV_CNT - 1 := 0;
     signal slow_clk      : std_logic := '0';
     
@@ -29,8 +30,7 @@ architecture Behavioral of pingpong_top is
     signal current_state : state_type;
     signal delay_cnt     : integer range 0 to 10;
 begin
-
-    -- 1. 分頻計數器
+    --div_counter
     process(clk, rst)
     begin
         if rst = '1' then
@@ -43,119 +43,145 @@ begin
             end if;
         end if;
     end process;
-
-    -- 2. 慢速時鐘產生
+    --slow_clk
     process(clk, rst)
     begin
         if rst = '1' then
             slow_clk <= '0';
         elsif rising_edge(clk) then
             if div_counter = DIV_CNT - 1 then
-                slow_clk <= not slow_clk;
+                slow_clk <= '1'; -- 到了分頻點，拉高一個時脈週期
+            else
+                slow_clk <= '0'; -- 平時維持低電平
             end if;
         end if;
     end process;
 
-    -- 3. 狀態機切換 (FSM)
-    process(slow_clk, rst)
+    --current_state
+    process(clk, rst)
     begin
         if rst = '1' then
             current_state <= WAIT_SERVE;
-        elsif rising_edge(slow_clk) then
-            case current_state is
-                when WAIT_SERVE =>
-                    if (ball_reg(7) = '1' and btn_l = '1') or (ball_reg(0) = '1' and btn_r = '1') then
-                        current_state <= PLAYING;
-                    end if;
-                when PLAYING =>
-                    if (dir = '0' and ball_reg(0) = '1') or (dir = '1' and ball_reg(7) = '1') then
-                        current_state <= SHOW_SCORE;
-                    end if;
-                when SHOW_SCORE =>
-                    if delay_cnt = 10 then
-                        current_state <= WAIT_SERVE;
-                    end if;
-            end case;
+        elsif rising_edge(clk) then
+            if slow_clk = '1' then
+                case current_state is
+                    when WAIT_SERVE =>
+                        if (ball_reg(7) = '1' and btn_l = '1') or (ball_reg(0) = '1' and btn_r = '1') then
+                            current_state <= PLAYING;
+                        end if;
+                    when PLAYING =>
+                        -- 漏球，或者提早擊球（球沒進入安全區就按鍵），都切換到 SHOW_SCORE
+                        if (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1 downto 0) = "00" and btn_r = '1') then
+                            current_state <= SHOW_SCORE;
+                        elsif (dir = '1' and ball_reg(7) = '1') or (dir = '1' and ball_reg(7 downto 6) = "00" and btn_l = '1') then
+                            current_state <= SHOW_SCORE;
+                        end if;
+                    when SHOW_SCORE =>
+                        if delay_cnt = 10 then
+                            current_state <= WAIT_SERVE;
+                        end if;
+                end case;
+            end if;
         end if;
     end process;
 
-    -- 4. 球的位置控制 (ball_reg)
-    process(slow_clk, rst)
-    begin
-        if rst = '1' then
-            ball_reg <= "10000000";
-        elsif rising_edge(slow_clk) then
+--ball_reg
+process(clk, rst)
+begin
+    if rst = '1' then
+        ball_reg <= "10000000";
+    elsif rising_edge(clk) then
+        if slow_clk = '1' then
             if current_state = SHOW_SCORE and delay_cnt = 10 then
-                if dir = '0' then ball_reg <= "00000001"; else ball_reg <= "10000000"; end if;
+                null; 
             elsif current_state = PLAYING then
-                if dir = '0' then
+                if (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1 downto 0) = "00" and btn_r = '1') then
+                    ball_reg <= "00000001"; 
+                elsif (dir = '1' and ball_reg(7) = '1') or (dir = '1' and ball_reg(7 downto 6) = "00" and btn_l = '1') then
+                    ball_reg <= "10000000";
+                elsif dir = '0' and ball_reg(1) = '1' and btn_r = '1' then
+                    ball_reg <= ball_reg(6 downto 0) & '0';
+                elsif dir = '1' and ball_reg(6) = '1' and btn_l = '1' then
+                    ball_reg <= '0' & ball_reg(7 downto 1);
+                elsif dir = '0' then
                     ball_reg <= '0' & ball_reg(7 downto 1);
                 else
                     ball_reg <= ball_reg(6 downto 0) & '0';
                 end if;
             end if;
         end if;
-    end process;
-
-    -- 5. 移動方向控制 (dir)
-    process(slow_clk, rst)
+    end if;
+end process;
+    --dir
+    process(clk, rst)
     begin
         if rst = '1' then
             dir <= '0';
-        elsif rising_edge(slow_clk) then
-            if current_state = WAIT_SERVE then
-                if ball_reg(7) = '1' and btn_l = '1' then dir <= '0';
-                elsif ball_reg(0) = '1' and btn_r = '1' then dir <= '1';
-                end if;
-            elsif current_state = PLAYING then
-                if dir = '0' and ball_reg(1) = '1' and btn_r = '1' then dir <= '1';
-                elsif dir = '1' and ball_reg(6) = '1' and btn_l = '1' then dir <= '0';
+        elsif rising_edge(clk) then
+            if slow_clk = '1' then
+                if current_state = WAIT_SERVE then
+                    if ball_reg(7) = '1' and btn_l = '1' then dir <= '0';
+                    elsif ball_reg(0) = '1' and btn_r = '1' then dir <= '1';
+                    end if;
+                elsif current_state = PLAYING then
+                    if dir = '0' and ball_reg(1) = '1' and btn_r = '1' then dir <= '1';
+                    elsif dir = '1' and ball_reg(6) = '1' and btn_l = '1' then dir <= '0';
+                    end if;
                 end if;
             end if;
         end if;
     end process;
-
-    -- 6. 左方得分計數
-    process(slow_clk, rst)
+    --score_l
+    process(clk, rst)
     begin
         if rst = '1' then
             score_l <= (others => '0');
-        elsif rising_edge(slow_clk) then
-            if current_state = PLAYING and dir = '0' and ball_reg(0) = '1' then
-                score_l <= score_l + 1;
+        elsif rising_edge(clk) then
+            if slow_clk = '1' then
+                if current_state = PLAYING then
+                    -- 右邊漏球，或者右邊提早擊球，左邊都得 1 分
+                    if (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1 downto 0) = "00" and btn_r = '1') then
+                        score_l <= score_l + 1;
+                    end if;
+                end if;
             end if;
         end if;
     end process;
-
-    -- 7. 右方得分計數
-    process(slow_clk, rst)
+    --score_r
+    process(clk, rst)
     begin
         if rst = '1' then
             score_r <= (others => '0');
-        elsif rising_edge(slow_clk) then
-            if current_state = PLAYING and dir = '1' and ball_reg(7) = '1' then
-                score_r <= score_r + 1;
+        elsif rising_edge(clk) then
+            if slow_clk = '1' then
+                if current_state = PLAYING then
+                    if (dir = '1' and ball_reg(7) = '1') or (dir = '1' and ball_reg(7 downto 6) = "00" and btn_l = '1') then
+                        score_r <= score_r + 1;
+                    end if;
+                end if;
             end if;
         end if;
     end process;
-
-    -- 8. 得分顯示計時器
-    process(slow_clk, rst)
+    --delay_cnt
+    process(clk, rst)
     begin
         if rst = '1' then
             delay_cnt <= 0;
-        elsif rising_edge(slow_clk) then
-            if current_state = SHOW_SCORE then
-                if delay_cnt < 10 then delay_cnt <= delay_cnt + 1;
-                else delay_cnt <= 0;
+        elsif rising_edge(clk) then
+            if slow_clk = '1' then
+                if current_state = SHOW_SCORE then
+                    if delay_cnt < 10 then
+                        delay_cnt <= delay_cnt + 1;
+                    else
+                        delay_cnt <= 0;
+                    end if;
+                else
+                    delay_cnt <= 0;
                 end if;
-            else
-                delay_cnt <= 0;
             end if;
         end if;
     end process;
-
-    -- 9. LED 輸出邏輯 (組合邏輯或同步輸出)
+    --led_out
     process(clk, rst)
     begin
         if rst = '1' then
