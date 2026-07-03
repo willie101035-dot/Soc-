@@ -50,9 +50,9 @@ begin
             slow_clk <= '0';
         elsif rising_edge(clk) then
             if div_counter = DIV_CNT - 1 then
-                slow_clk <= '1'; -- 到了分頻點，拉高一個時脈週期
+                slow_clk <= '1'; 
             else
-                slow_clk <= '0'; -- 平時維持低電平
+                slow_clk <= '0'; 
             end if;
         end if;
     end process;
@@ -70,7 +70,6 @@ begin
                             current_state <= PLAYING;
                         end if;
                     when PLAYING =>
-                        -- 漏球，或者提早擊球（球沒進入安全區就按鍵），都切換到 SHOW_SCORE
                         if (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1 downto 0) = "00" and btn_r = '1') then
                             current_state <= SHOW_SCORE;
                         elsif (dir = '1' and ball_reg(7) = '1') or (dir = '1' and ball_reg(7 downto 6) = "00" and btn_l = '1') then
