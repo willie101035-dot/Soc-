@@ -25,7 +25,7 @@ architecture Behavioral of pingpong_top is
     signal slow_clk      : std_logic := '0';
     signal slow_clk_reg  : std_logic := '0'; 
     
-    signal ball_reg      : std_logic_vector(7 downto 0) := "10000000";
+    signal ball_reg      : std_logic_vector(9 downto 0) := "0100000000";
     signal dir           : std_logic := '0';
     signal score_l       : unsigned(3 downto 0) := "0000";
     signal score_r       : unsigned(3 downto 0) := "0000";
@@ -84,8 +84,8 @@ begin
         if rst = '1' then
             speed_limit <= 0;
         elsif rising_edge(clk) then
-            if (current_state = PLAYING and ball_reg = "00000010" and btn_r = '1') or
-               (current_state = PLAYING and ball_reg = "01000000" and btn_l = '1') or
+            if (current_state = PLAYING and (ball_reg(1) = '1' or ball_reg(0) = '1') and btn_r = '1') or
+               (current_state = PLAYING and (ball_reg(9) = '1' or ball_reg(8) = '1') and btn_l = '1') or
                (current_state = SHOW_SCORE and delay_cnt = 10) then
                 speed_limit <= to_integer(unsigned(lfsr_reg));
             end if;
@@ -100,15 +100,18 @@ begin
             if slow_clk = '1' and slow_clk_reg = '0' then
                 case current_state is
                     when WAIT_SERVE =>
-                        if (ball_reg(7) = '1' and btn_l = '1') or (ball_reg(0) = '1' and btn_r = '1') then 
+                        if (ball_reg(8) = '1' and btn_l = '1') or (ball_reg(1) = '1' and btn_r = '1') then 
                             current_state <= PLAYING;
                         end if;
                         
                     when PLAYING =>
-                        if (dir = '0' and ball_reg = "00000001") or (dir = '1' and ball_reg = "10000000") then
+                        if dir = '0' and (ball_reg(1) = '1' or ball_reg(0) = '1') and btn_r = '1' then
+                            current_state <= PLAYING;
+                        elsif dir = '1' and (ball_reg(9) = '1' or ball_reg(8) = '1') and btn_l = '1' then
+                            current_state <= PLAYING;
+                        elsif (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1) = '0' and ball_reg(0) = '0' and btn_r = '1') then
                             current_state <= SHOW_SCORE;
-                        elsif (dir = '0' and ball_reg /= "00000010" and ball_reg /= "00000001" and btn_r = '1') or
-                              (dir = '1' and ball_reg /= "01000000" and ball_reg /= "10000000" and btn_l = '1') then
+                        elsif (dir = '1' and ball_reg(9) = '1') or (dir = '1' and ball_reg(9) = '0' and ball_reg(8) = '0' and btn_l = '1') then
                             current_state <= SHOW_SCORE;
                         end if;
                         
@@ -128,12 +131,12 @@ begin
         elsif rising_edge(clk) then
             if slow_clk = '1' and slow_clk_reg = '0' then
                 if current_state = WAIT_SERVE then
-                    if (ball_reg(7) = '1' and btn_l = '1') then dir <= '0';
-                    elsif (ball_reg(0) = '1' and btn_r = '1') then dir <= '1';
+                    if (ball_reg(8) = '1' and btn_l = '1') then dir <= '0';
+                    elsif (ball_reg(1) = '1' and btn_r = '1') then dir <= '1';
                     end if;
                 elsif current_state = PLAYING then
-                    if dir = '0' and ball_reg = "00000010" and btn_r = '1' then dir <= '1';
-                    elsif dir = '1' and ball_reg = "01000000" and btn_l = '1' then dir <= '0';
+                    if dir = '0' and (ball_reg(1) = '1' or ball_reg(0) = '1') and btn_r = '1' then dir <= '1';
+                    elsif dir = '1' and (ball_reg(9) = '1' or ball_reg(8) = '1') and btn_l = '1' then dir <= '0';
                     end if;
                 end if;
             end if;
@@ -143,7 +146,7 @@ begin
     process(clk, rst)
     begin
         if rst = '1' then
-            ball_reg <= "10000000";
+            ball_reg <= "0100000000";
         elsif rising_edge(clk) then
             if slow_clk = '1' and slow_clk_reg = '0' then
                 case current_state is
@@ -151,25 +154,27 @@ begin
                         null;
                         
                     when PLAYING =>
-                        if dir = '0' and ball_reg = "00000010" and btn_r = '1' then 
-                            ball_reg <= "00000100";
-                        elsif dir = '1' and ball_reg = "01000000" and btn_l = '1' then 
-                            ball_reg <= "00100000";
-                        elsif (dir = '0' and ball_reg = "00000001") or 
-                              (dir = '0' and ball_reg /= "00000010" and btn_r = '1') then 
-                            ball_reg <= "00000001"; 
-                        elsif (dir = '1' and ball_reg = "10000000") or 
-                              (dir = '1' and ball_reg /= "01000000" and btn_l = '1') then 
-                            ball_reg <= "10000000";
+                        if dir = '0' and (ball_reg(1) = '1' or ball_reg(0) = '1') and btn_r = '1' then 
+                            ball_reg <= ball_reg(8 downto 0) & '0';
+                        elsif dir = '1' and (ball_reg(9) = '1' or ball_reg(8) = '1') and btn_l = '1' then 
+                            ball_reg <= '0' & ball_reg(9 downto 1);
+                        elsif (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1) = '0' and ball_reg(0) = '0' and btn_r = '1') then 
+                            ball_reg <= "0000000010"; 
+                        elsif (dir = '1' and ball_reg(9) = '1') or (dir = '1' and ball_reg(9) = '0' and ball_reg(8) = '0' and btn_l = '1') then 
+                            ball_reg <= "0100000000";
                         elsif dir = '0' then 
-                            ball_reg <= '0' & ball_reg(7 downto 1);
+                            ball_reg <= '0' & ball_reg(9 downto 1);
                         else 
-                            ball_reg <= ball_reg(6 downto 0) & '0';
+                            ball_reg <= ball_reg(8 downto 0) & '0';
                         end if;
                         
                     when SHOW_SCORE =>
                         if delay_cnt >= 10 then
-                            null; 
+                            if score_l > score_r then
+                                ball_reg <= "0100000000";
+                            else
+                                ball_reg <= "0000000010";
+                            end if;
                         end if;
                 end case;
             end if;
@@ -183,8 +188,9 @@ begin
         elsif rising_edge(clk) then
             if slow_clk = '1' and slow_clk_reg = '0' then
                 if current_state = PLAYING then
-                    if (dir = '0' and ball_reg = "00000001") or 
-                       (dir = '0' and ball_reg /= "00000010" and btn_r = '1') then
+                    if dir = '0' and (ball_reg(1) = '1' or ball_reg(0) = '1') and btn_r = '1' then
+                        score_l <= score_l;
+                    elsif (dir = '0' and ball_reg(0) = '1') or (dir = '0' and ball_reg(1) = '0' and ball_reg(0) = '0' and btn_r = '1') then
                         score_l <= score_l + 1;
                     end if;
                 end if;
@@ -199,8 +205,9 @@ begin
         elsif rising_edge(clk) then
             if slow_clk = '1' and slow_clk_reg = '0' then
                 if current_state = PLAYING then
-                    if (dir = '1' and ball_reg = "10000000") or 
-                       (dir = '1' and ball_reg /= "01000000" and btn_l = '1') then
+                    if dir = '1' and (ball_reg(9) = '1' or ball_reg(8) = '1') and btn_l = '1' then
+                        score_r <= score_r;
+                    elsif (dir = '1' and ball_reg(9) = '1') or (dir = '1' and ball_reg(9) = '0' and ball_reg(8) = '0' and btn_l = '1') then
                         score_r <= score_r + 1;
                     end if;
                 end if;
@@ -227,14 +234,13 @@ begin
         end if;
     end process;
 
-    led_out <= std_logic_vector(score_l) & std_logic_vector(score_r) when current_state = SHOW_SCORE else ball_reg;
+    led_out <= std_logic_vector(score_l) & std_logic_vector(score_r) when current_state = SHOW_SCORE else ball_reg(8 downto 1);
 
 end Behavioral;
 
 ```
 ## 波形圖
-<img width="1543" height="787" alt="image" src="https://github.com/user-attachments/assets/830d059f-88e5-419d-a98e-584246aa5c92" />
-<img width="1542" height="788" alt="image" src="https://github.com/user-attachments/assets/0bd39180-24cb-4c8a-b62a-bd46515cf891" />
+<img width="1546" height="787" alt="image" src="https://github.com/user-attachments/assets/01f6c315-6461-41be-8859-380f781d2a13" />
 
 ## 架構圖
 <img width="935" height="453" alt="image" src="https://github.com/user-attachments/assets/a53b25a9-6b5d-478c-8a8c-d0613458411d" />
