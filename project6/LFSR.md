@@ -17,7 +17,7 @@ entity pingpong_top is
 end pingpong_top;
 
 architecture Behavioral of pingpong_top is
-    constant DIV_CNT     : integer := 2;
+    constant DIV_CNT     : integer := 2000000;
     
     signal div_counter   : integer range 0 to 2000000 := 0; 
     signal speed_limit   : integer range 0 to 15 := 0;
