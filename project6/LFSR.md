@@ -19,7 +19,7 @@ end pingpong_top;
 architecture Behavioral of pingpong_top is
     constant DIV_CNT     : integer := 2000000;
     
-    signal div_counter   : integer range 0 to 2000000 := 0; 
+    signal div_counter   : integer range 0 to DIV_CNT-1 := 0; 
     signal speed_limit   : integer range 0 to 15 := 0;
     signal lfsr_reg      : std_logic_vector(3 downto 0) := "1011";
     signal slow_clk      : std_logic := '0';
