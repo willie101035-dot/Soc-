@@ -1,4 +1,62 @@
 # VGA
+
+### top-module
+```vhdl
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity vga_top is
+    Port (
+        clk     : in  STD_LOGIC;                   
+        rst     : in  STD_LOGIC;                    
+        h_sync  : out STD_LOGIC;                    
+        v_sync  : out STD_LOGIC;                    
+        vga_r   : out STD_LOGIC_VECTOR(2 downto 0); 
+        vga_g   : out STD_LOGIC_VECTOR(2 downto 0); 
+        vga_b   : out STD_LOGIC_VECTOR(2 downto 0)  
+    );
+end vga_top;
+
+architecture Behavioral of vga_top is
+
+    signal clk_25MHz     : STD_LOGIC := '0';
+    signal clk_cnt       : unsigned(1 downto 0) := (others => '0');
+    
+    signal disp_en       : STD_LOGIC;
+    signal pixel_x       : STD_LOGIC_VECTOR(9 downto 0);
+    signal pixel_y       : STD_LOGIC_VECTOR(9 downto 0);
+
+begin
+
+    process(clk, rst)
+    begin
+        if rst = '1' then
+            clk_cnt <= (others => '0');
+            clk_25MHz <= '0';
+        elsif rising_edge(clk) then
+            clk_cnt <= clk_cnt + 1;
+            clk_25MHz <= clk_cnt(1); 
+        end if;
+    end process;
+
+    U_VGA_SYNC : entity work.vga_sync
+        port map (
+            clk_25MHz => clk_25MHz,
+            rst       => rst,
+            h_sync    => h_sync,
+            v_sync    => v_sync,
+            disp_en   => disp_en,
+            vga_r     => vga_r,
+            vga_g     => vga_g,
+            vga_b     => vga_b,
+            pixel_x   => pixel_x,
+            pixel_y   => pixel_y
+        );
+
+end Behavioral;
+```
+### Sub-module
 ```vhdl
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -128,5 +186,23 @@ begin
 
 end Behavioral;
 ```
-# 上板子
-<img width="1477" height="1108" alt="S__38526983" src="https://github.com/user-attachments/assets/8ad281c2-1fdb-4fae-a639-d112b8ba0cca" />
+## 波形圖
+
+
+## 架構圖
+
+
+## AOV
+
+
+## breakdown
+
+
+## msc
+
+
+## FPGA板
+<img width="1477" height="1108" alt="S__38526983" src="https://github.com/user-attachments/assets/a86d4ff2-3063-45bc-a5fe-58ad8d193093" />
+
+
+
