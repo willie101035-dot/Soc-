@@ -219,7 +219,7 @@ end Behavioral;
 
 
 ## breakdown
-
+<img width="576" height="75" alt="image" src="https://github.com/user-attachments/assets/6a6841df-9f6f-4abf-9504-03b40d94d218" />
 
 ## msc
 
