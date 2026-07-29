@@ -209,11 +209,9 @@ begin
 
 end Behavioral;
 ```
-## 波形圖
-
 
 ## 架構圖
-
+<img width="710" height="752" alt="未命名绘图" src="https://github.com/user-attachments/assets/0d86ba25-3842-4647-863c-3b694efcf6e3" />
 
 ## AOV
 
