@@ -140,8 +140,17 @@ begin
             end if; 
         end if;
     end process;
-
-    disp_en_internal <= '1' when (h_cnt_reg < HD and v_cnt_reg < VD) else '0';
+	
+	process(clk_25MHz,rst)
+	begin
+		if rst = '1' then
+			disp_en_internal <= '0';
+		elsif (h_cnt_reg < HD and v_cnt_reg < VD) then
+			disp_en_internal <= '1';
+		else
+			disp_en_internal <= '0';
+		end if;
+	end process;
 
     process(h_cnt_reg)
     begin
@@ -163,16 +172,30 @@ begin
             end if;
         end if;
     end process;
-
-    process(disp_en_internal)
+	
+	    process(disp_en_internal)
     begin
         if disp_en_internal = '1' then
             vga_r <= "111";
-            vga_g <= "000";
-            vga_b <= "111";
         else
             vga_r <= "000";
+        end if;
+    end process;
+	
+	    process(disp_en_internal)
+    begin
+        if disp_en_internal = '1' then
             vga_g <= "000";
+        else
+            vga_g <= "000";
+        end if;
+    end process;
+	
+	    process(disp_en_internal)
+    begin
+        if disp_en_internal = '1' then
+            vga_b <= "111";
+        else
             vga_b <= "000";
         end if;
     end process;
