@@ -10,7 +10,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity top_module is
     Port (
-        clk_25MHz   : in  STD_LOGIC;                    -- 接收板載 100MHz 時脈
+        clk   : in  STD_LOGIC;                    -- 接收板載 100MHz 時脈
         rst         : in  STD_LOGIC;                    -- 重置訊號
         btn_p1_up   : in  STD_LOGIC;
         btn_p1_down : in  STD_LOGIC;
@@ -52,8 +52,8 @@ architecture Structural of top_module is
     end component;
 
     -- 內部除頻訊號 (把 100MHz 除頻成真正的 25MHz)
-    signal real_clk_25MHz : STD_LOGIC := '0';
-    signal clk_divider    : unsigned(1 downto 0) := "00";
+    signal clk_25MHz : STD_LOGIC := '0';
+    signal clk_cnt    : unsigned(1 downto 0) := "00";
 
     signal disp_en_internal : STD_LOGIC;
     signal pixel_x          : INTEGER range 0 to 799;
@@ -63,16 +63,32 @@ begin
 
     process(clk_25MHz)
     begin
-        if rising_edge(clk_25MHz) then
-            clk_divider <= clk_divider + 1;
+        if rising_edge(clk) then
+            clk_cnt <= clk_cnt + 1;
         end if;
     end process;
     
-    real_clk_25MHz <= clk_divider(1); -- 第 2 位元就是 25MHz
+    process(clk, rst)
+    begin
+        if rst = '1' then
+            clk_cnt <= (others => '0');
+        elsif rising_edge(clk) then
+            clk_cnt <= clk_cnt + 1;
+        end if;
+    end process;
+
+	process(clk, rst)
+    begin
+        if rst = '1' then
+            clk_25MHz <= '0';
+        elsif rising_edge(clk) then
+            clk_25MHz <= clk_cnt(1); 
+        end if;
+    end process;
 
     u_sync : sub_moudle_sync
         port map (
-            clk_25MHz        => real_clk_25MHz,  -- 傳入 25MHz
+            clk_25MHz        => clk_25MHz,  -- 傳入 25MHz
             rst              => rst,
             hsync            => hsync,
             vsync            => vsync,
@@ -83,7 +99,7 @@ begin
 
     u_game : sub_moudle_game
         port map (
-            clk_25MHz        => real_clk_25MHz,  -- 傳入 25MHz
+            clk_25MHz        => clk_25MHz,  -- 傳入 25MHz
             rst              => rst,
             disp_en_internal => disp_en_internal,
             pixel_x          => pixel_x,
