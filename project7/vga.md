@@ -1,3 +1,4 @@
+<img width="522" height="352" alt="vga_1" src="https://github.com/user-attachments/assets/95b768d3-13ee-4580-a239-524a501e665f" />
 # VGA
 
 ### top-module
@@ -214,13 +215,12 @@ end Behavioral;
 <img width="710" height="752" alt="未命名绘图" src="https://github.com/user-attachments/assets/0d86ba25-3842-4647-863c-3b694efcf6e3" />
 
 ## AOV
-
+<img width="522" height="352" alt="vga_1" src="https://github.com/user-attachments/assets/98250f40-c667-43cf-b98d-689456bb1f5e" />
 
 ## breakdown
 <img width="576" height="75" alt="image" src="https://github.com/user-attachments/assets/6a6841df-9f6f-4abf-9504-03b40d94d218" />
 
 ## msc
-
 
 ## FPGA板
 <img width="1477" height="1108" alt="S__38526983" src="https://github.com/user-attachments/assets/a86d4ff2-3063-45bc-a5fe-58ad8d193093" />
