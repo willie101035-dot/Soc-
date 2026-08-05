@@ -1,4 +1,3 @@
-<img width="522" height="352" alt="vga_1" src="https://github.com/user-attachments/assets/95b768d3-13ee-4580-a239-524a501e665f" />
 # VGA
 
 ### top-module
