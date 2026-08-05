@@ -214,7 +214,7 @@ end Behavioral;
 <img width="710" height="752" alt="未命名绘图" src="https://github.com/user-attachments/assets/0d86ba25-3842-4647-863c-3b694efcf6e3" />
 
 ## AOV
-<img width="522" height="352" alt="vga_1" src="https://github.com/user-attachments/assets/98250f40-c667-43cf-b98d-689456bb1f5e" />
+<img width="601" height="352" alt="vga_1 drawio" src="https://github.com/user-attachments/assets/792f753e-a3f5-44df-82f0-4ce2a7e666fc" />
 
 ## breakdown
 <img width="576" height="75" alt="image" src="https://github.com/user-attachments/assets/6a6841df-9f6f-4abf-9504-03b40d94d218" />
