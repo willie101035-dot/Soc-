@@ -220,7 +220,8 @@ end Behavioral;
 <img width="576" height="75" alt="image" src="https://github.com/user-attachments/assets/6a6841df-9f6f-4abf-9504-03b40d94d218" />
 
 ## tspec
-<img width="1480" height="480" alt="VGA" src="https://github.com/user-attachments/assets/090b155d-3925-4074-bb61-13501d53b942" />
+<img width="1480" height="480" alt="VGA" src="https://github.com/user-attachments/assets/abe5f601-c306-480a-be33-94ecc3296e37" />
+
 
 
 ## FPGA板
