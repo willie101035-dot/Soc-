@@ -219,7 +219,8 @@ end Behavioral;
 ## breakdown
 <img width="576" height="75" alt="image" src="https://github.com/user-attachments/assets/6a6841df-9f6f-4abf-9504-03b40d94d218" />
 
-## msc
+## tspec
+<img width="1480" height="480" alt="VGA" src="https://github.com/user-attachments/assets/b61bcd9b-2107-40d5-9f42-702441c8f6ff" />
 
 ## FPGA板
 <img width="1477" height="1108" alt="S__38526983" src="https://github.com/user-attachments/assets/a86d4ff2-3063-45bc-a5fe-58ad8d193093" />
