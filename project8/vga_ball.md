@@ -140,8 +140,8 @@ architecture Behavioral of sub_moudle_sync is
 
     constant VD : integer := 480; 
     constant VF : integer := 10;  
-    constant VB : integer := 2;   
-    constant VR : integer := 33;  
+    constant VS : integer := 2;   
+    constant VB : integer := 33;  
     constant VT : integer := 525; 
 	
 	signal h_count : integer range 0 to HT-1 := 0;
@@ -195,7 +195,7 @@ begin
 		if rst = '1' then
 			vsync <= '0';
 		elsif rising_edge(clk_25MHz) then
-			if (v_count >= VD + VF) and (v_count < VD + VF +VB ) then
+			if (v_count >= VD + VF) and (v_count < VD + VF +VS ) then
 				vsync <= '1' ;
 			else
 				vsync <= '0';
