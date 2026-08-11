@@ -134,8 +134,8 @@ end sub_moudle_sync;
 architecture Behavioral of sub_moudle_sync is
 	constant HD : integer := 640;
     constant HF : integer := 16;  
-    constant HB : integer := 96;  
-    constant HR : integer := 48;  
+    constant HS : integer := 96;  
+    constant HB : integer := 48;  
     constant HT : integer := 800; 
 
     constant VD : integer := 480; 
@@ -182,7 +182,7 @@ begin
 		if rst = '1' then
 			hsync <= '0';
 		elsif rising_edge(clk_25MHz) then
-			if (h_count >= HD + HF) and (h_count < HD + HF +HB ) then
+			if (h_count >= HD + HF) and (h_count < HD + HF +HS ) then
 				hsync <= '1' ;
 			else
 				hsync <= '0';
