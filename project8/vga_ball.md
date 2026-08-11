@@ -53,8 +53,7 @@ architecture Structural of top_module is
 
     -- 內部除頻訊號 (把 100MHz 除頻成真正的 25MHz)
     signal clk_25MHz : STD_LOGIC := '0';
-    signal clk_cnt    : unsigned(1 downto 0) := "00";
-
+    signal clk_cnt    : unsigned(1 downto 0) := "00";00 01 10 11
     signal disp_en_internal : STD_LOGIC;
     signal pixel_x          : INTEGER range 0 to 799;
     signal pixel_y          : INTEGER range 0 to 524;
